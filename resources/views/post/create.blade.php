@@ -25,21 +25,21 @@
                         <input type="text" name="title" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="title" placeholder="Enter Title">
                         {{-- old関数でバリデーションエラー発生前の値を残す --}}
                         {{-- value="{{old('title')}}"> --}}
-                        value="{{old('title')}}"
+                        {{old('title')}}
                     </div>
                     </div>
 
                     <div class="w-full flex flex-col">
                         <label for="body" class="font-semibold leading-none mt-4">本文</label>
+                        {{-- バリデーション処理 --}}
                         <x-input-error :messages="$errors->get('body')" class="mt-2" />
                         <textarea name="body" class="w-auto py-2 border border-gray-300 rounded-md" id="body" cols="30" rows="10"></textarea>
                         {{old('body')}}
                     </div>
 
-                    <x-primary-button class="mt-4">
+                <x-primary-button class="mt-4" >   
                         送信する
                     </x-primary-button>
-                    
                 </form>
             </div>
         </div>
